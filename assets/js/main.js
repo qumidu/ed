@@ -1,3 +1,4 @@
+// navbar
 const navbar = document.querySelector(`.navbar`);
 const navLinks = document.querySelectorAll(`.nav-link`);
 const navbarCollapse = document.querySelector(`.navbar-collapse.collapse`);
@@ -55,3 +56,27 @@ main.addEventListener(`click`, () => {
 navbarBrand.addEventListener(`click`, hideNavbar);
 
 navbarToggler.addEventListener(`click`, hideMenuToggle);
+
+// popular courses
+const swiper = new Swiper(".mySwiper", {
+  freeMode: true,
+  loop: true,
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 25,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 25,
+    },
+  },
+});
