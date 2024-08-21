@@ -56,6 +56,10 @@
   .hero_section .hero_title_text {
     margin-top: 50px;
   }
+
+  .faq_content_container .row .col-lg-6:last-child .faq_collapse:first-child {
+    padding-top: 30px;
+  }
 }
 
 @media (max-width: 575.98px) {

@@ -80,3 +80,55 @@ const swiper = new Swiper(".mySwiper", {
     },
   },
 });
+
+// faq section
+document.addEventListener(`DOMContentLoaded`, function () {
+  const faqHeaders = document.querySelectorAll(`.faq_header`);
+  let currentlyOpenedContent = null;
+  let currentlyOpenedIcon = null;
+  faqHeaders.forEach((faqHeader) => {
+    faqHeader.addEventListener(`click`, () => {
+      const faqContent = faqHeader.nextElementSibling;
+      const currentDisplay = window.getComputedStyle(faqContent).display;
+      const faqIcon = faqHeader.querySelector(`.faq_icon`);
+      if (currentlyOpenedContent && currentlyOpenedContent !== faqContent) {
+        currentlyOpenedContent.style.display = `none`;
+        currentlyOpenedIcon.textContent = `+`;
+      }
+      if (currentDisplay === `block`) {
+        faqContent.style.display = `none`;
+        currentlyOpenedContent = null;
+        currentlyOpenedIcon = null;
+        faqIcon.textContent = `+`;
+      } else {
+        faqContent.style.display = `block`;
+        currentlyOpenedContent = faqContent;
+        currentlyOpenedIcon = faqIcon;
+        faqIcon.textContent = `-`;
+      }
+    });
+  });
+});
+
+// testimonials section
+var swiper2 = new Swiper(".mySwiper2", {
+  loop: true,
+  autoplay: {
+    delay: 2500,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    0: {
+      slidesPerView: 1,
+      spaceBetween: 25,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 15,
+    },
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 25,
+    },
+  },
+});
