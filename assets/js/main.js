@@ -57,32 +57,55 @@ navbarBrand.addEventListener(`click`, hideNavbar);
 
 navbarToggler.addEventListener(`click`, hideMenuToggle);
 
-// popular courses
-const swiper = new Swiper(".mySwiper", {
-  freeMode: true,
-  loop: true,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: 25,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 15,
-    },
-    992: {
-      slidesPerView: 3,
-      spaceBetween: 25,
-    },
-  },
-});
-
-// faq section
 document.addEventListener(`DOMContentLoaded`, function () {
+  // popular courses
+  const swiper = new Swiper(".mySwiper", {
+    freeMode: true,
+    loop: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 25,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 25,
+      },
+    },
+  });
+
+  // testimonials section
+  const swiper2 = new Swiper(".mySwiper2", {
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      disableOnInteraction: false,
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+        spaceBetween: 25,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 15,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 25,
+      },
+    },
+  });
+
+  // faq section
   const faqHeaders = document.querySelectorAll(`.faq_header`);
   let currentlyOpenedContent = null;
   let currentlyOpenedIcon = null;
@@ -108,27 +131,4 @@ document.addEventListener(`DOMContentLoaded`, function () {
       }
     });
   });
-});
-
-// testimonials section
-var swiper2 = new Swiper(".mySwiper2", {
-  loop: true,
-  autoplay: {
-    delay: 2500,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: 25,
-    },
-    768: {
-      slidesPerView: 2,
-      spaceBetween: 15,
-    },
-    992: {
-      slidesPerView: 3,
-      spaceBetween: 25,
-    },
-  },
 });
