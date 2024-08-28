@@ -45,8 +45,13 @@ li {
 
 .logo {
   color: var(--light-color);
-  font-size: clamp(1.5rem, 1.6rem, 2rem);
+  font-size: clamp(1.5rem, 1.7rem, 2rem);
   font-weight: 700;
+}
+
+.logo:hover,
+.logo:focus {
+  color: var(--light-color);
 }
 
 .logo-mark {
@@ -125,6 +130,58 @@ li {
   overflow: visible;
 }
 
+.back-to-top {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background-color: var(--dark-primary-color);
+  color: var(--marker-color);
+  font-size: 20px;
+  position: fixed;
+  bottom: 5%;
+  right: 2%;
+  z-index: 1000;
+  opacity: 0;
+  will-change: scale;
+  transition: var(--transition);
+}
+
+.back-to-top.active {
+  opacity: 1;
+}
+
+.back-to-top:hover {
+  background-color: var(--marker-color);
+  color: var(--dark-primary-color);
+  scale: 1.1;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.back-to-top.active.shake {
+  animation: shake 0.5s linear infinite;
+}
+
 /* ====================================== custom scrollbar ====================================== */
 ::-webkit-scrollbar {
   width: 10px;
@@ -153,7 +210,10 @@ li {
   border-radius: var(--border-radius);
 }
 
-.header_section .nav-item:hover .nav-link,
+.header_section .nav-item:hover .nav-link {
+  background-color: rgba(242, 39, 127, 0.5);
+}
+
 .header_section .nav-item .nav-link.active {
   background-color: var(--marker-color);
 }
@@ -468,9 +528,11 @@ li {
   border-radius: 50%;
   font-size: 20px;
   display: flex;
+  will-change: scale;
   transition: var(--transition);
 }
 
 .footer_section .social_media_container .social_media_btn:hover {
   background: var(--marker-color);
+  scale: 1.1;
 }

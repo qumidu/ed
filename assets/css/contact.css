@@ -1,0 +1,77 @@
+/* contact section */
+.contact_section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact_section .img_container {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.contact_section .img_container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: var(--transition);
+}
+
+.contact_section .img_container:hover img {
+  scale: 1.1;
+  rotate: 5deg;
+}
+
+.contact_section .content_container .contact_details_list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content_container .contact_details_list .contact_item {
+  color: var(--light-color);
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
+}
+
+.content_container .contact_item .icon {
+  background: var(--marker-color);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.content_container .contact_item:hover .icon {
+  background: var(--secondary-color);
+  scale: 1.1;
+}
+
+/* map section */
+.map_section {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.map_section .map {
+  width: 100%;
+  height: 100%;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

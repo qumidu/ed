@@ -59,11 +59,11 @@ navbarToggler.addEventListener(`click`, hideMenuToggle);
 
 document.addEventListener(`DOMContentLoaded`, function () {
   // popular courses
-  const swiper = new Swiper(".mySwiper", {
+  const swiper = new Swiper(`.mySwiper`, {
     freeMode: true,
     loop: true,
     pagination: {
-      el: ".swiper-pagination",
+      el: `.swiper-pagination`,
       clickable: true,
     },
     breakpoints: {
@@ -83,7 +83,7 @@ document.addEventListener(`DOMContentLoaded`, function () {
   });
 
   // testimonials section
-  const swiper2 = new Swiper(".mySwiper2", {
+  const swiper2 = new Swiper(`.mySwiper2`, {
     loop: true,
     autoplay: {
       delay: 2500,
@@ -131,4 +131,101 @@ document.addEventListener(`DOMContentLoaded`, function () {
       }
     });
   });
+});
+
+// scroll reveal
+const sb = ScrollReveal({
+  duration: 2500,
+  delay: 800,
+  mobile: false,
+  origin: `bottom`,
+  distance: `60px`,
+  // reset: true,
+});
+
+// from left
+sb.reveal(
+  `
+  .hero_section .row .col-lg-6:nth-of-type(1),
+  .faq_section .faq_content_container .row .col-lg-6:nth-of-type(1),
+  .about_hero_section .row .col-lg-6:nth-of-type(1),
+  .contact_section .row .col-lg-6:nth-of-type(1)`,
+  { origin: `left` }
+);
+
+// from right
+sb.reveal(
+  `
+  .hero_section .row .col-lg-6:nth-of-type(2),
+  .faq_section .faq_content_container .row .col-lg-6:nth-of-type(2),
+  .about_hero_section .row .col-lg-6:nth-of-type(2),
+  .contact_section .row .col-lg-6:nth-of-type(2)`,
+  { origin: `right` }
+);
+
+// from top
+sb.reveal(`.header_section .navbar`, { origin: `top` });
+
+// from bottom
+sb.reveal(
+  `
+  .categories_section .categories_content_container .card,
+  .popular_courses_section .popular_courses_content_container,
+  .testimonials_section .testimonials_content,
+  .footer_section,
+  .footer_section .col-lg-3,
+  .about_team_section .content_container .col-md-6,
+  .courses_section .courses_content_container .col-md-6,
+  .pagination_container .col-12,
+  .map_section .map`,
+  { origin: `bottom` }
+);
+
+// title
+sb.reveal(`.section_header_container`, { origin: `bottom`, delay: 900 });
+sb.reveal(`.section_header_container .sub-head`, {
+  origin: `bottom`,
+  delay: 900,
+});
+sb.reveal(`.section_header_container .main-head`, {
+  origin: `bottom`,
+  delay: 800,
+});
+
+// back to top
+document.addEventListener(`DOMContentLoaded`, function () {
+  const backToTop = document.getElementById(`back-to-top`);
+
+  window.addEventListener(`scroll`, function () {
+    if (window.scrollY > 200) {
+      backToTop.classList.add(`active`);
+    } else {
+      backToTop.classList.remove(`active`);
+    }
+  });
+
+  backToTop.addEventListener(`click`, function (event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: `smooth`,
+    });
+  });
+
+  // shake arrow
+  function shakeElement() {
+    backToTop.classList.add("shake");
+
+    setTimeout(() => {
+      backToTop.classList.remove("shake");
+    }, 1000);
+  }
+
+  setTimeout(() => {
+    shakeElement();
+
+    setInterval(() => {
+      shakeElement();
+    }, 5000);
+  }, 1000);
 });
