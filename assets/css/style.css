@@ -27,6 +27,8 @@ html {
 
 body {
   background: var(--primary-color);
+  visibility: hidden;
+  overflow-x: hidden;
 }
 
 /* ====================================== common ====================================== */
