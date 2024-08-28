@@ -148,6 +148,7 @@ li {
   right: 2%;
   z-index: 1000;
   opacity: 0;
+  visibility: visible;
   will-change: scale;
   transition: var(--transition);
 }
