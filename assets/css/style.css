@@ -27,7 +27,7 @@ html {
 
 body {
   background: var(--primary-color);
-  visibility: hidden;
+  /* visibility: hidden; */
   overflow-x: hidden;
 }
 
